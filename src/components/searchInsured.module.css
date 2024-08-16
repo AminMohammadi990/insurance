@@ -1,0 +1,88 @@
+.container {
+  height: 100%;
+  border: 10px solid rgb(226, 223, 223);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2rem auto;
+  width: 500px;
+}
+
+.form input {
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(175, 173, 173);
+  height: 30px;
+  padding: 5px;
+}
+
+.form button {
+  position: absolute;
+  left: 0.5rem;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(217, 186, 245);
+  color: rgb(133, 72, 190);
+  border: none;
+  border-radius: 2px;
+}
+
+.content img {
+  width: 100px;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8rem;
+  align-items: center;
+  gap:10px;
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-basis: 1fr;
+  padding: 10px;
+  width: 100%;
+  
+  
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid rgb(202, 200, 200);
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
+.list h3 {
+  margin: 10px 0;
+}
+
+.list img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.list span{
+  font-weight: 600;
+}
