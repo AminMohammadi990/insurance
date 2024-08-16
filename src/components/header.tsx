@@ -4,11 +4,14 @@ import { HiOutlineBolt } from "react-icons/hi2";
 import { HiCalendar } from "react-icons/hi2";
 
 import classes from "./header.module.css";
+import Logo from "./logo";
 
 export default function MainHeader() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>logo</div>
+      <div className={classes.logo}>
+        <Logo />
+      </div>
 
       <div className={classes.icons}>
         <div className={classes.red}>
@@ -18,8 +21,8 @@ export default function MainHeader() {
           <HiOutlineBellAlert />
         </div>
         <div className={classes.blue}>
-      <HiCalendar />
-    </div>
+          <HiCalendar />
+        </div>
         <div className={classes.orange}>
           <HiOutlineEnvelope />
         </div>
