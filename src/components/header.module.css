@@ -1,0 +1,98 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.profile {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #efe9f7;
+  color: #a697c1;
+  padding: 5px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(133, 72, 190);
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 3px;
+  right: 2px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 30px;
+  object-fit: cover;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+
+
+.icons .orange {
+  width: 20px;
+  height: 20px;
+  background-color: #fcf3c5;
+  color: #e0c482;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons .green {
+  width: 20px;
+  height: 20px;
+  background-color: #d2f8df;
+  color: #52b281;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.icons .red {
+  width: 20px;
+  height: 20px;
+  background-color: #fee4e2;
+  color: #cd7475;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons .blue {
+  width: 20px;
+  height: 20px;
+  background-color: #e2f1f9;
+  color: #86a0af;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin-left: auto;
+}
