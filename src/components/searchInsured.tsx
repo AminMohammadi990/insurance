@@ -3,10 +3,11 @@ import { useState, useRef, FormEvent, ChangeEvent } from "react";
 
 import classes from "./searchInsured.module.css";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
-import { useDebounce } from "../../hooks/use-debounce";
-import { useSerachQuery } from "../../hooks/use-searchQuery";
+import { useDebounce } from "../hooks/use-debounce";
+import { useSerachQuery } from "../hooks/use-searchQuery";
+import LoadingIndicator from "./loading";
 
-type Data = {
+export type Attributes = {
   attributes: {
     CoverageEndDate: string;
     CoverageStartDate: string;
@@ -25,21 +26,25 @@ type Data = {
     state: boolean;
     updatedAt: string;
   };
-
-  id: number;
 };
+
+type Data = {
+  id: number;
+} & Attributes;
 
 export default function SearchInsured() {
   const [searchTerm, setSearchTerm] = useState("");
+  const searchElement = useRef<HTMLInputElement>(null);
 
   const debounce = useDebounce(searchTerm, 300);
 
   const { data, isLoading } = useSerachQuery(debounce);
-  
 
-  const searchElement = useRef<HTMLInputElement>(null);
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    setSearchTerm(e.target.value);
+  }
 
-  function handleSubmit(event:FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSearchTerm(searchElement.current!.value);
   }
@@ -56,7 +61,7 @@ export default function SearchInsured() {
   );
 
   if (isLoading) {
-    content = <p>loading...</p>;
+    content = <LoadingIndicator />;
   }
 
   if (data) {
@@ -66,7 +71,7 @@ export default function SearchInsured() {
   if (data) {
     content = (
       <ul className={classes.ul}>
-        {data.data.map((person:Data) => (
+        {data.data.map((person: Data) => (
           <li key={person.id}>
             <Link href={`/${person.id}`}>
               <div className={classes.list}>
@@ -102,7 +107,7 @@ export default function SearchInsured() {
             type="text"
             placeholder="جستجو کن..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.currentTarget.value)}
+            onChange={handleChange}
             ref={searchElement}
           />
           <button>

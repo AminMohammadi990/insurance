@@ -16,7 +16,7 @@ export const fetchInsureds = async (nationalCode: string) => {
   return data;
 };
 
-export const fetchInsuredDetails = async (id: string) => {
+export const fetchInsuredDetails = async (id: number) => {
   const { data } = await axiosInstance.get(`/test-insureds/${id}`);
   return data;
 };

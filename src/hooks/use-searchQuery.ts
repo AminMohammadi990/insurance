@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchInsureds } from "../lib/axios";
+import { fetchInsureds } from "@/lib/axios";
 
 export function useSerachQuery(query:string) {
   return useQuery({
