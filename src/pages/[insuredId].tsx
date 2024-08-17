@@ -10,13 +10,13 @@ export default function InsuredDetail() {
 
   const id = router.query.insuredId;
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["insuredDetails", id],
     queryFn: () => fetchInsuredDetails(id),
   });
 
-  console.log(data);
-  if (!data) return <LoadingIndicator />;
+
+  if (isLoading) return <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}><LoadingIndicator /></div>;
 
   const { attributes } = data.data;
 

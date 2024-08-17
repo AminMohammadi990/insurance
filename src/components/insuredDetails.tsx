@@ -38,7 +38,7 @@ export default function InsuredDetails({data}:Props) {
 
       <section className={classes.detail}>
         <div className={classes.top}>
-          <img src="./images/male00.jpg" alt="profile pic" />
+          <img src="./images/malePic.jpg" alt="profile pic" />
           <div>
             <h3>
               بیمه شده سرپرست : {data.firstName} {data.lastName}

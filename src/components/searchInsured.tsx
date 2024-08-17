@@ -7,11 +7,12 @@ import { useDebounce } from "../hooks/use-debounce";
 import { useSerachQuery } from "../hooks/use-searchQuery";
 import LoadingIndicator from "./loading";
 import { Attributes } from "@/utils/types";
+import Tabs from "./tabs";
 
 export type Data = {
   attributes: Attributes;
   id: number;
-}
+};
 
 export default function SearchInsured() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,7 +57,7 @@ export default function SearchInsured() {
           <li key={person.id}>
             <Link href={`/${person.id}`}>
               <div className={classes.list}>
-                <img src="./images/male00.jpg" alt="profile pic" />
+                <img src="./images/malePic.jpg" alt="profile pic" />
                 <div>
                   <h4>
                     بیمه شده سرپرست : {person.attributes.firstName}{" "}
@@ -82,6 +83,7 @@ export default function SearchInsured() {
 
   return (
     <>
+      <Tabs />
       <div className={classes.container}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <input

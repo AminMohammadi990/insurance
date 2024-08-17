@@ -17,11 +17,6 @@
   padding: 5px 10px;
 }
 
-/* .nav span:last-child {
-  color: rgb(46, 151, 128);
-  font-weight: 600;
-} */
-
 .nav .active {
   color: #589b9a;
   font-weight: 600;
@@ -37,6 +32,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
 }
 
 .top {
