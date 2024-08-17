@@ -1,10 +1,26 @@
 import classes from "./insuredDetails.module.css";
 import { HiMiniChevronLeft } from "react-icons/hi2";
-import { Attributes } from "./searchInsured";
+import { Attributes } from "@/utils/types";
 
-type InsuredDetailsProps = Attributes
 
-export default function InsuredDetails({ data }:InsuredDetailsProps) {
+type Props = {
+  data:Attributes
+}
+// type Props = {
+//   id:number,
+// }
+
+export default function InsuredDetails({data}:Props) {
+  //  const { data } = useQuery({
+  //   queryKey: ["insuredDetails", id],
+  //   queryFn: () => fetchInsuredDetails(id),
+  // });
+
+  // console.log(data);
+  // if (!data) return <LoadingIndicator />;
+
+  // const { attributes } = data.data;
+
   return (
     <div className={classes.container}>
       <section className={classes.nav}>
@@ -15,7 +31,7 @@ export default function InsuredDetails({ data }:InsuredDetailsProps) {
         <span>
           بیمه شده <HiMiniChevronLeft />
         </span>
-        <span className={data.status === "false" ? classes.inactive : classes.active}>
+        <span className={data.state ? classes.active : classes.inactive}>
           {data.firstName} {data.lastName}
         </span>
       </section>
@@ -35,7 +51,7 @@ export default function InsuredDetails({ data }:InsuredDetailsProps) {
         <hr className={classes.hr} />
         <div className={classes.grid}>
           <p>نام و نام خانوادگی : <span>{data.firstName} {data.lastName}</span></p>
-          <p>وضعیت : <span>{data.status === "false" ? "غیر فعال" : "فعال"}</span></p>
+          <p>وضعیت : <span>{data.state ? "فعال" : "غیر فعال"}</span></p>
           <p>وضعیت سرپرستی : <span>{data.relation}</span></p>
           
           <p>مکان : <span>{data.place}</span></p>

@@ -6,31 +6,12 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { useDebounce } from "../hooks/use-debounce";
 import { useSerachQuery } from "../hooks/use-searchQuery";
 import LoadingIndicator from "./loading";
+import { Attributes } from "@/utils/types";
 
-export type Attributes = {
-  attributes: {
-    CoverageEndDate: string;
-    CoverageStartDate: string;
-    address: string;
-    code: string;
-    createdAt: string;
-    fatherName: string;
-    firstName: string;
-    lastName: string;
-    nationalCode: string;
-    personalCode: string;
-    phone: string;
-    place: string;
-    publishedAt: string;
-    relation: string;
-    state: boolean;
-    updatedAt: string;
-  };
-};
-
-type Data = {
+export type Data = {
+  attributes: Attributes;
   id: number;
-} & Attributes;
+}
 
 export default function SearchInsured() {
   const [searchTerm, setSearchTerm] = useState("");

@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 const axiosInstance = axios.create({
@@ -16,7 +17,7 @@ export const fetchInsureds = async (nationalCode: string) => {
   return data;
 };
 
-export const fetchInsuredDetails = async (id: number) => {
+export const fetchInsuredDetails = async (id: string | string[] | undefined) => {
   const { data } = await axiosInstance.get(`/test-insureds/${id}`);
   return data;
 };
