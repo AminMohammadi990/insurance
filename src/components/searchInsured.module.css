@@ -1,10 +1,12 @@
 .container {
   height: 100%;
-  border: 10px solid rgb(226, 223, 223);
+  border: 10px solid #ebeff2;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+  max-height: 630px;
 }
 
 .form {
@@ -46,7 +48,7 @@
   flex-direction: column;
   margin-top: 8rem;
   align-items: center;
-  gap:10px;
+  gap: 10px;
 }
 
 .ul {
@@ -57,19 +59,16 @@
   flex-basis: 1fr;
   padding: 10px;
   width: 100%;
-  
-  
 }
 
 .list {
   display: flex;
   gap: 10px;
   align-items: center;
-  border: 1px solid rgb(202, 200, 200);
-  background-color: rgb(236, 236, 236);
+  border: 1px solid #dbdfe2;
+  background-color: #ebeff2;
   border-radius: 5px;
   padding: 5px;
-
 }
 
 .list h3 {
@@ -83,6 +82,6 @@
   object-fit: cover;
 }
 
-.list span{
+.list span {
   font-weight: 600;
 }

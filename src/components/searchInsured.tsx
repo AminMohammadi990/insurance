@@ -58,10 +58,10 @@ export default function SearchInsured() {
               <div className={classes.list}>
                 <img src="./images/male00.jpg" alt="profile pic" />
                 <div>
-                  <h3>
+                  <h4>
                     بیمه شده سرپرست : {person.attributes.firstName}{" "}
                     {person.attributes.lastName}
-                  </h3>
+                  </h4>
                   <p>
                     کد ملی : <span>{person.attributes.nationalCode}</span>
                   </p>

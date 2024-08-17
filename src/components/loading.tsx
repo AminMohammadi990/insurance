@@ -1,4 +1,4 @@
-import classes from "./loading.module.css"
+import classes from "./loading.module.css";
 
 export default function LoadingIndicator() {
   return (
