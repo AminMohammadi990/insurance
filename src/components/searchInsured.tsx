@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState, useRef, FormEvent, ChangeEvent } from "react";
 
 import classes from "./searchInsured.module.css";
@@ -6,15 +5,13 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { useDebounce } from "../hooks/use-debounce";
 import { useSerachQuery } from "../hooks/use-searchQuery";
 import LoadingIndicator from "./loading";
-import { Attributes } from "@/utils/types";
-import Tabs from "./tabs";
+import { Data } from "@/utils/types";
 
-export type Data = {
-  attributes: Attributes;
-  id: number;
+type Props = {
+  onSelect: (item: Data) => void;
 };
 
-export default function SearchInsured() {
+export default function SearchInsured({ onSelect }: Props) {
   const [searchTerm, setSearchTerm] = useState("");
   const searchElement = useRef<HTMLInputElement>(null);
 
@@ -54,27 +51,27 @@ export default function SearchInsured() {
     content = (
       <ul className={classes.ul}>
         {data.data.map((person: Data) => (
-          <li key={person.id}>
-            <Link href={`/${person.id}`}>
-              <div className={classes.list}>
-                <img src="./images/malePic.jpg" alt="profile pic" />
-                <div>
-                  <h4>
-                    بیمه شده سرپرست : {person.attributes.firstName}{" "}
-                    {person.attributes.lastName}
-                  </h4>
-                  <p>
-                    کد ملی : <span>{person.attributes.nationalCode}</span>
-                  </p>
-                  <p>
-                    نسبت : <span>{person.attributes.relation}</span>
-                  </p>
-                  <p>
-                    آدرس : <span>{person.attributes.address}</span>
-                  </p>
-                </div>
+          <li key={person.id} onClick={() => onSelect(person)}>
+            {/* <Link href={`/${person.id}`}> */}
+            <div className={classes.list}>
+              <img src="./images/malePic.jpg" alt="profile pic" />
+              <div>
+                <h4>
+                  بیمه شده سرپرست : {person.attributes.firstName}{" "}
+                  {person.attributes.lastName}
+                </h4>
+                <p>
+                  کد ملی : <span>{person.attributes.nationalCode}</span>
+                </p>
+                <p>
+                  نسبت : <span>{person.attributes.relation}</span>
+                </p>
+                <p>
+                  آدرس : <span>{person.attributes.address}</span>
+                </p>
               </div>
-            </Link>
+            </div>
+            {/* </Link> */}
           </li>
         ))}
       </ul>
@@ -83,7 +80,6 @@ export default function SearchInsured() {
 
   return (
     <>
-      <Tabs />
       <div className={classes.container}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <input

@@ -6,7 +6,6 @@
   flex-direction: column;
   align-items: center;
   overflow-y: inherit;
-  max-height: 630px;
 }
 
 .form {
@@ -22,9 +21,14 @@
   width: 100%;
   border-radius: 5px;
   outline: none;
-  border: 1px solid rgb(175, 173, 173);
+  border: 1px solid rgb(233, 231, 231);
   height: 30px;
   padding: 5px;
+  background-color: #f7f7f7;
+}
+
+.form input::placeholder {
+  color: rgba(123,123,123,255);
 }
 
 .form button {
@@ -32,8 +36,8 @@
   left: 0.5rem;
   width: 20px;
   height: 20px;
-  background-color: rgb(217, 186, 245);
-  color: rgb(133, 72, 190);
+  background-color: #ede5fa;
+  color: #917fb9;
   border: none;
   border-radius: 2px;
 }
@@ -59,6 +63,10 @@
   flex-basis: 1fr;
   padding: 10px;
   width: 100%;
+}
+
+.ul li {
+  cursor: pointer;
 }
 
 .list {

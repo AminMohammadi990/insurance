@@ -16,3 +16,8 @@ export type Attributes = {
   state: boolean;
   updatedAt: string;
 };
+
+export type Data = {
+  attributes: Attributes;
+  id: number;
+};
